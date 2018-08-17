@@ -7,9 +7,9 @@ var currentVideoReducer = (state = null, action) => {
   //currentvideo is the action object
   switch (action.type) {
     case 'CHANGE_VIDEO':
-      return action.video
+      return action.video;
       default:
-        return state
+        return state;
   }
 };
 
