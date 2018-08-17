@@ -19,9 +19,7 @@ var mapDispatchToProps = dispatch => ({
   handleVideoListEntryTitleClick: video => dispatch(changeVideo(video)) });
 
 var  mapStateToProps = state => ({
-  // video: state.video, //@ not entirely sure about this since reducer
   videos: state.videoList
-
 });
 
 var VideoListContainer = connect(mapStateToProps, mapDispatchToProps)(VideoList);

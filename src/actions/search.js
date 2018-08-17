@@ -7,27 +7,22 @@ import YOUTUBE_API_KEY from "../config/youtube.js";
 
 var handleVideoSearch = q => {
   //TODO:  Write an asynchronous action to handle a video search!
+  //dispatch is passed as a callback
   return dispatch => {
     return searchYouTube({ key: YOUTUBE_API_KEY, query: q, max: 5 }, vList => {
       // dispatch(changeVideo((state = null), action));
       // dispatch(changeVideoList((state = null), action));
-      dispatch(changeVideo(vList[0])); //QUESTION: what happens if we just pass store.dispatch?
+      dispatch(changeVideo(vList[0]));
       dispatch(changeVideoList(vList));
     });
   };
-
+  //QUESTION: what happens if we just pass store.dispatch?
   //invoke dispatch?
   //or create action object?
 };
 
 
-// can be also written in ES6:
-// var handleVideoSearch = q => dispatch => {
-//     return searchYouTube({ key: YOUTUBE_API_KEY, query: q, max: 5 }, vList => {
-//       dispatch(changeVideo(vList[0]));
-//       dispatch(changeVideoList(vList));
-//     });
-//   };
+
 //QUESTION: why is this considered an action creator when it is invoking dispatch?
 
 
